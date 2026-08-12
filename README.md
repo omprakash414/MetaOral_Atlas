@@ -227,7 +227,7 @@ Cohort-level metadata for all discovery and validation datasets used in this stu
 </details>
 
 <details>
-<summary><b>ST1F</b> — Details of the 19 validation study cohorts from Saliva-Sputum-Oral Wash Subsite validating 499 taxa with three properties of Core-Association, Stability-Association and Health-Association.</summary>
+<summary><b>ST1F</b> — Details of the 19 validation study cohorts from Saliva-Sputum-Oral Wash Subsite validating 499 taxa with three properties of Core-Association, Stability-Association, Health-Association and co-abundance modules.</summary>
 
 | # | Study Cohort | Study Name | Sample Size | Control Count | Disease Count | Other Sample Count | Disease | Oral-Subsite | Country | Sequencing Strategy | Accession No. | DOI |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
