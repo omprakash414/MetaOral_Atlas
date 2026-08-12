@@ -133,7 +133,7 @@ Cohort-level metadata for all discovery and validation datasets used in this stu
 | 2 | ChenC_2018 | ChenC_2018_exposure | 12 | 12 | 0 | supragingival_subsite | USA | 16s | PRJNA321534 | https://doi.org/10.1038/s41396-017-0037-1 |
 | 3 | FerrerM_2020 | FerrerM_2020 | 75 | 75 | 0 | supragingival_subsite | ESP | 16s | PRJNA629283 | https://doi.org/10.3389/fcimb.2020.00465 |
 | 4 | GanesanS_2020 | GanesanS_2020_exposure | 24 | 24 | 0 | supragingival_subsite | USA | WGS | PRJNA544061; PRJNA548383; PRJNA508385 | https://doi.org/10.1126/sciadv.aaz0108 |
-| 5 | HMP_2012 | HMP_2012 | 132 | 132 | 0 | supragingival_subsite | USA | WGS |  | https://doi.org/10.1038/nature11234 |
+| 5 | HMP_2012 | HMP_2012 | 132 | 132 | 0 | supragingival_subsite | USA | WGS | cMD | https://doi.org/10.1038/nature11234 |
 | 6 | JiangW_2015 | JiangW_2015 | 64 | 64 | 0 | supragingival_subsite | CHN | 16s | PRJNA267061 | https://doi.org/10.1371/journal.pone.0124631 |
 | 7 | JulianM_2017 | JulianM_2017_exposure | 20 | 20 | 0 | supragingival_subsite | USA | 16s | PRJNA330897 | http://dx.doi.org/10.1097/MD.0000000000005821 |
 | 8 | ShaiberA_2020 | ShaiberA_2020a | 35 | 35 | 0 | supragingival_subsite | USA | 16s | PRJNA625082 | https://doi.org/10.1186/s13059-020-02195-w |
@@ -187,7 +187,7 @@ Cohort-level metadata for all discovery and validation datasets used in this stu
 | 2 | CaselliE_2020 | CaselliE_2020 | 20 | 20 | 0 | tongue_tonsil_subsite | ITA | WGS | PRJEB36291 | https://doi.org/10.1186/s12866-020-01801-y |
 | 3 | FerrettiP_2018 | FerrettiP_2018 | 24 | 24 | 0 | tongue_tonsil_subsite | ITA | WGS | PRJNA352475 | https://doi.org/10.1016/j.chom.2018.06.005 |
 | 4 | FloresG_2014 | FloresG_2014 | 895 | 895 | 0 | tongue_tonsil_subsite | USA | 16s | PRJEB5726 | https://doi.org/10.1186/s13059-014-0531-y |
-| 5 | HMP_2012 | HMP_2012 | 142 | 142 | 0 | tongue_tonsil_subsite | USA | WGS |  | https://doi.org/10.1038/nature11234 |
+| 5 | HMP_2012 | HMP_2012 | 142 | 142 | 0 | tongue_tonsil_subsite | USA | WGS | cMD | https://doi.org/10.1038/nature11234 |
 | 6 | HalboubE_2020 | HalboubE_2020 | 23 | 23 | 0 | tongue_tonsil_subsite | SAU | 16s | PRJNA605810 | https://doi.org/10.1186/s12866-020-01883-8 |
 | 7 | HalboubE_2020 | HalboubE_2020_exposure | 29 | 29 | 0 | tongue_tonsil_subsite | SAU | 16s | PRJNA605810 | https://doi.org/10.1186/s12866-020-01883-8 |
 | 8 | LarsonP_2022 | LarsonP_2022 | 125 | 125 | 0 | tongue_tonsil_subsite | USA | WGS | PRJNA699281 | https://doi.org/10.1038/s43587-022-00287-9 |
@@ -213,7 +213,7 @@ Cohort-level metadata for all discovery and validation datasets used in this stu
 | 1 | BassisC_2014 | BassisC_2014_exposure | 12 | 12 | 0 | buccal_palate_other_surface_subsite | USA | 16s | PRJNA248297 | https://doi.org/10.1186/2049-2618-2-27 |
 | 2 | BurchamZ_2020 | BurchamZ_2020 | 195 | 195 | 0 | buccal_palate_other_surface_subsite | USA | 16s | PRJEB33119 | https://doi.org/10.1038/s41598-020-59016-0 |
 | 3 | CaselliE_2020 | CaselliE_2020 | 40 | 40 | 0 | buccal_palate_other_surface_subsite | ITA | WGS | PRJEB36291 | https://doi.org/10.1186/s12866-020-01801-y |
-| 4 | HMP_2012 | HMP_2012 | 120 | 120 | 0 | buccal_palate_other_surface_subsite | USA | WGS |  | https://doi.org/10.1038/nature11234 |
+| 4 | HMP_2012 | HMP_2012 | 120 | 120 | 0 | buccal_palate_other_surface_subsite | USA | WGS | cMD | https://doi.org/10.1038/nature11234 |
 | 5 | JulianM_2017 | JulianM_2017_exposure | 20 | 20 | 0 | buccal_palate_other_surface_subsite | USA | 16s | PRJNA330897 | http://dx.doi.org/10.1097/MD.0000000000005821 |
 | 6 | StewartC_2018 | StewartC_2018_exposure | 10 | 10 | 0 | buccal_palate_other_surface_subsite | USA | 16s | PRJNA413706 | https://doi.org/10.7717/peerj.4693 |
 | 7 | ThomasA_2014 | ThomasA_2014_exposure | 19 | 19 | 0 | buccal_palate_other_surface_subsite | BRA | 16s | PRJNA255332 | https://doi.org/10.1186/s12866-014-0250-2 |
