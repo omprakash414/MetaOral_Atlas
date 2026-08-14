@@ -96,12 +96,14 @@ df_comparison <- as.data.frame(df_comparison_matrix)
 
 df_comparison <- df_comparison[!apply(df_comparison, 1, function(x) all(x == 0, na.rm = TRUE)),,drop = FALSE]
 
+# take only consistent taxa across two of them.
+df_comparison_filtered <- df_comparison[apply(df_comparison, 1, function(x) {all(x > 0) || all(x < 0)}),,drop = FALSE]
 
 color_map <- c("-3"  = "#8B0000","-2"  = "#CD5C5C","-1"  = "white","0"  = "white","1" = "white","2" = "#329732","3" = "#006400")
 
 library(pheatmap)
 pdf("/storage/omprakash/MetaOral_Analysis/MetaOral_Data_Analysis/S4_HealthAssociation_modified/S4_1BuccalPalate_heatmap_StudyWise_HealthSpecies.pdf", width = 40, height = 20)
-pheatmap(t(df_comparison),
+pheatmap(t(df_comparison_filtered),
          color = color_map,
          fontsize_row = 8,
          fontsize_col = 8,
@@ -118,20 +120,20 @@ dev.off()
 
 ########## Get the carpet
 ph <- pheatmap(
-  t(df_comparison),
+  t(df_comparison_filtered),
   cluster_rows = TRUE,
   cluster_cols = TRUE,
   silent = TRUE
 )
 
 ## Rows of t(df_comparison) = columns of df_comparison
-ordered_cols <- rownames(t(df_comparison))[ph$tree_row$order]
+ordered_cols <- rownames(t(df_comparison_filtered))[ph$tree_row$order]
 
 ## Columns of t(df_comparison) = rows of df_comparison
-ordered_rows <- colnames(t(df_comparison))[ph$tree_col$order]
+ordered_rows <- colnames(t(df_comparison_filtered))[ph$tree_col$order]
 
 ## Reorder the original data frame
-df_comparison_sorted <- df_comparison[ordered_rows,ordered_cols,drop = FALSE]
+df_comparison_sorted <- df_comparison_filtered[ordered_rows,ordered_cols,drop = FALSE]
 
 write.csv(df_comparison_sorted, file = "/storage/omprakash/MetaOral_Analysis/MetaOral_Data_Analysis/S4_HealthAssociation_modified/S4_1BuccalPalate_heatmap_carpet_StudyWise_HealthSpecies.csv")
 
