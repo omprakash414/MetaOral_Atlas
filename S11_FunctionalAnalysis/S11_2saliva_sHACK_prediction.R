@@ -17,6 +17,8 @@ subgingival_matched_taxa <- intersect(rownames(Combined_Subgingival_Scores), row
 tongue_matched_taxa <- intersect(rownames(Combined_TongueTonsil_Scores), rownames(MeanFunctionalProfile_groups))
 # 190 species off 266
 
+overlapped_species <- unique(c(saliva_matched_taxa,supragingival_matched_taxa,subgingival_matched_taxa,tongue_matched_taxa))
+write.csv(overlapped_species, file = "/storage/omprakash/MetaOral_Analysis/MetaOral_Data_Analysis/S11_FunctionalAnalysis/S11_2Overlapped_species_All.csv")
 
 ######## Now extract these matched species from the functional profile for each subsite and start prediction
 saliva_MeanFunctionalProfile_groups <- MeanFunctionalProfile_groups[saliva_matched_taxa, ]
