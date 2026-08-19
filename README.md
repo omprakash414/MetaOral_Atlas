@@ -1,4 +1,5 @@
 # MetaOral_Atlas
+![Graphical_Abstract](S9_Validation/MetaOral_Abstract.png)
 This repository contains the analysis code and results supporting "Multi-cohort analysis of 37,739 oral microbiomes reveals ecologically influential health-associated microbial sub-communities across five oral sub-sites" — a large-scale, subsite-resolved meta-analysis of the human oral microbiome using 37,739 publicly available microbiome profiles spanning 142 cohorts across 41 countries.
 
 The study introduces the sHACK (salivary Health, Core, and Stability Association) and HAC (Health and Core Association) scoring frameworks to identify taxa that are reproducibly linked to oral health, ecological centrality, and — in saliva — longitudinal stability, across four oral habitats: saliva, supragingival plaque, subgingival plaque, and tongue-tonsil. The repository also includes co-abundance module analysis, cross-cohort validation of health-associated taxa panels, and genome-derived functional profiling that predicts sHACK/HAC scores from microbial functional potential.
