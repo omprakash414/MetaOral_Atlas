@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive oral microbiome network explorer" />
+  <title>Oral Microbiome Network Explorer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Interactive research resource</div>
+        <h1>Oral Microbiome Network Explorer</h1>
+        <p>Explore subsite-specific microbial networks, species properties, ecological neighbourhoods and cluster-level score distributions.</p>
+      </div>
+      <button id="statsToggle" class="button button-accent">Cluster statistics</button>
+    </header>
+
+    <section class="toolbar card">
+      <div class="control-group wide">
+        <label>Subsite</label>
+        <div id="subsiteButtons" class="segmented"></div>
+      </div>
+
+      <div class="control-group search-group">
+        <label for="speciesSearch">Find species</label>
+        <div class="search-row">
+          <input id="speciesSearch" list="speciesOptions" placeholder="Type a species name…" autocomplete="off" />
+          <datalist id="speciesOptions"></datalist>
+          <button id="searchButton" class="button">Find</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="clusterFilter">Cluster</label>
+        <select id="clusterFilter">
+          <option value="all">All clusters</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="layoutMode">Layout</label>
+        <select id="layoutMode">
+          <option value="network">Network</option>
+          <option value="pca">Association space</option>
+        </select>
+      </div>
+
+      <div class="control-group action-group">
+        <label>&nbsp;</label>
+        <button id="resetButton" class="button">Reset view</button>
+      </div>
+    </section>
+
+    <main class="workspace">
+      <section class="network-card card">
+        <div class="network-head">
+          <div>
+            <h2 id="networkTitle">Network</h2>
+            <div id="networkSubtitle" class="muted"></div>
+          </div>
+          <div id="modeBadge" class="mode-badge">Single subsite</div>
+        </div>
+
+        <div id="networkWrap">
+          <div id="cy"></div>
+          <div id="networkHint" class="network-hint">Click a species to focus on its direct neighbourhood.</div>
+          <div id="loading" class="loading hidden">Loading network…</div>
+        </div>
+
+        <div class="legend-wrap">
+          <div>
+            <div class="legend-title">Clusters</div>
+            <div id="clusterLegend" class="legend"></div>
+          </div>
+          <div id="subsiteLegendWrap" class="hidden">
+            <div class="legend-title">Active subsites</div>
+            <div id="subsiteLegend" class="legend"></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="info-card card">
+        <div id="infoEmpty" class="empty-state">
+          <div class="empty-icon">◎</div>
+          <h3>Select a species</h3>
+          <p>Its scores, cluster membership, direct neighbours and cross-subsite availability will appear here.</p>
+        </div>
+
+        <div id="clusterSummary" class="cluster-summary hidden"></div>
+
+        <div id="infoContent" class="hidden">
+          <div class="info-title-row">
+            <div>
+              <div class="eyebrow">Selected species</div>
+              <h2 id="speciesTitle"></h2>
+            </div>
+            <button id="closeFocus" class="icon-button" aria-label="Clear selection">×</button>
+          </div>
+
+          <div id="speciesMeta"></div>
+
+          <div class="panel-section">
+            <h3>Direct connections</h3>
+            <div id="connectionCount" class="stat-large"></div>
+            <div id="neighborList" class="neighbor-list"></div>
+          </div>
+
+          <div class="panel-section">
+            <h3>Explore across subsites</h3>
+            <p class="muted small">If this species occurs in another network, add that subsite to compare its direct ecological neighbourhood.</p>
+            <div id="crossSubsiteButtons" class="cross-buttons"></div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <section id="statsPanel" class="stats-panel card hidden">
+      <div class="stats-head">
+        <div>
+          <div class="eyebrow">Cluster-level comparison</div>
+          <h2 id="statsTitle">Cluster statistics</h2>
+        </div>
+        <button id="statsClose" class="icon-button" aria-label="Close statistics">×</button>
+      </div>
+
+      <div class="stats-controls">
+        <div class="control-group">
+          <label for="statsSubsite">Subsite</label>
+          <select id="statsSubsite"></select>
+        </div>
+        <div class="control-group">
+          <label for="statsMetric">Variable</label>
+          <select id="statsMetric"></select>
+        </div>
+        <div id="kwResult" class="kw-result"></div>
+      </div>
+
+      <div class="stats-grid">
+        <div id="statsPlot"></div>
+        <div>
+          <h3>Cluster summary</h3>
+          <div class="table-wrap">
+            <table id="summaryTable">
+              <thead>
+                <tr><th>Cluster</th><th>n</th><th>Mean</th><th>Median</th></tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Interactive oral microbiome network resource</span>
+      <span>Data are loaded directly from the repository CSV files.</span>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jstat@1.9.6/dist/jstat.min.js"></script>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
