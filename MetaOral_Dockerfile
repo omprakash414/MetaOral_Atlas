@@ -1,0 +1,53 @@
+# hash:sha256:09b7ab20440a9fd0dd53c1ff79dce2577c61b84a4570e29e42af09666c3dff01
+FROM registry.codeocean.com/codeocean/r-studio:r-4.5.1-1.2204.0-rstudio-server-2025.05.1-513-ubuntu22.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        libfreetype6-dev=2.11.1+dfsg-1ubuntu0.3 \
+        libjpeg-dev=8c-2ubuntu10 \
+        libpng-dev=1.6.37-3ubuntu0.6 \
+        libtiff5-dev=4.3.0-6ubuntu0.13 \
+        libuv1-dev=1.43.0-1ubuntu0.1 \
+        libwebp-dev=1.2.2-2ubuntu0.22.04.2 \
+        pkg-config=0.29.2-1ubuntu3 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN Rscript -e 'remotes::install_version("reshape2", "1.4.5")' \
+    && Rscript -e 'remotes::install_version("vegan", "2.7-5")' \
+    && Rscript -e 'remotes::install_version("dplyr", "1.2.1")' \
+    && Rscript -e 'remotes::install_version("ade4", "1.7-24")' \
+    && Rscript -e 'remotes::install_version("pcaPP", "2.0-5")' \
+    && Rscript -e 'remotes::install_version("caret", "7.0-1")' \
+    && Rscript -e 'remotes::install_version("randomForest", "4.7-1.2")' \
+    && Rscript -e 'remotes::install_version("pROC", "1.19.0.1")' \
+    && Rscript -e 'remotes::install_version("MLmetrics", "1.1.3")' \
+    && Rscript -e 'remotes::install_version("ggplot2", "4.0.3")' \
+    && Rscript -e 'remotes::install_version("adegraphics", "1.0-22")' \
+    && Rscript -e 'remotes::install_version("writexl", "1.5.4")' \
+    && Rscript -e 'remotes::install_version("compositions", "2.0-9")' \
+    && Rscript -e 'remotes::install_version("sfsmisc", "1.1-24")' \
+    && Rscript -e 'remotes::install_version("MASS", "7.3-60.0.1")' \
+    && Rscript -e 'remotes::install_version("metafor", "5.0-1")' \
+    && Rscript -e 'remotes::install_version("readxl", "1.5.0")' \
+    && Rscript -e 'remotes::install_version("robustbase", "0.99-7")' \
+    && Rscript -e 'remotes::install_version("foreach", "1.5.2")' \
+    && Rscript -e 'remotes::install_version("igraph", "2.3.3")' \
+    && Rscript -e 'remotes::install_version("tidyr", "1.3.2")' \
+    && Rscript -e 'remotes::install_version("psych", "2.6.5")' \
+    && Rscript -e 'remotes::install_version("effsize", "0.8.1")' \
+    && Rscript -e 'remotes::install_version("doParallel", "1.0.17")' \
+    && Rscript -e 'remotes::install_version("pheatmap", "1.0.13")' \
+    && Rscript -e 'remotes::install_version("ggrepel", "0.9.8")' \
+    && Rscript -e 'remotes::install_version("ggpubr", "0.6.2")' \
+    && Rscript -e 'remotes::install_version("tibble", "3.3.1")' \
+    && Rscript -e 'remotes::install_version("DescTools", "0.99.60")' \
+    && Rscript -e 'remotes::install_version("LaplacesDemon", "16.1.8")' \
+    && Rscript -e 'remotes::install_version("beanplot", "1.3.1")' \
+    && Rscript -e 'remotes::install_version("dunn.test", "1.3.6")' \
+    && Rscript -e 'remotes::install_version("metacoder", "0.3.9")' \
+    && Rscript -e 'remotes::install_version("cluster", "2.1.8.3")' \
+    && Rscript -e 'remotes::install_version("clusterSim", "0.51-6")' \
+    && Rscript -e 'remotes::install_version("eulerr", "7.0.4")' \
+    && Rscript -e 'remotes::install_version("polylabelr", "1.0.0")'
