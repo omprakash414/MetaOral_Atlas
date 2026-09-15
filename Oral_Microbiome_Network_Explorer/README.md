@@ -5,7 +5,7 @@ An interactive browser-based resource for exploring subsite-specific oral microb
 
 ## Open the interactive network
 
-The explorer is available directly in a web browser at:
+The explorer is available directly in a web browser at: (No need of server to be deployed. It can be opened on laptop as well)
 
 https://omprakash414.github.io/MetaOral_Atlas/Oral_Microbiome_Network_Explorer/
 
